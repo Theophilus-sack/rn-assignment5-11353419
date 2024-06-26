@@ -38,10 +38,10 @@ react-native-vector-icons: Library for using vector icons.
 ![Screenshot 1](my-app\assets\ss1.jpg)
 
 # Screenshot2
-![Screenshot 1](my-app\assets\ss2.jpg)
+![Screenshot 2](my-app\assets\ss2.jpg)
 
 # Screenshot3
-![Screenshot 1](my-app\assets\ss3.jpg)
+![Screenshot 3](my-app\assets\ss3.jpg)
 
 # Screenshot4
-![Screenshot 1](my-app\assets\ss4.jpg)
+![Screenshot 4](my-app\assets\ss4.jpg)
