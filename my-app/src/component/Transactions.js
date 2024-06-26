@@ -1,31 +1,37 @@
 import React from 'react';
 import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 
-export const Transactions = () => {
+export const Transactions = ({isDarkTheme}) => {
+
+    
+
+  const textColor = isDarkTheme ? 'white' : '#000';
+  const cardBackgroundColor = isDarkTheme ? '#161622' : '#fff';
+  const imageBackgroundColor = isDarkTheme ? '#1e1e2d' : '#fff';
 
     const transactionData  = [
-        {id: '1', title: 'Apple Store', category: 'Entertainment', amount:'-$5,99', image:require('../../assets/apple.png') },
+        {id: '1', title: 'Apple Store', category: 'Entertainment', amount:'-$5,99', image: isDarkTheme? require('../../assets/wapple.png'): require('../../assets/apple.png') },
         {id: '2', title: 'Spotify', category: 'Music', amount:'-$12,99', image: require('../../assets/spotify.png')},
-        {id: '3', title: 'Money Transfer', category: 'Transaction', amount:'$300', image: require('../../assets/moneyTransfer.png')},
+        {id: '3', title: 'Money Transfer', category: 'Transaction', amount:'$300', image: isDarkTheme? require('../../assets/wd.png'): require('../../assets/apple.png')},
         {id: '4', title: 'Grocery', category: 'Music', amount:'-$88', image: require('../../assets/grocery.png')}
     ]
 
   return (
     <View style={styles.container}>
         <View style={styles.transactionTitleView}>
-            <Text style={styles.title}>Transaction</Text>
+            <Text style={[styles.title, {color: textColor}]}>Transaction</Text>
             <Text style={styles.subtitle}>Sell All</Text>
         </View>
 
         <ScrollView style={styles.scrollview} contentContainerStyle = {styles.scrollviewContent}>
             {transactionData.map((transactions, index) =>(
-                <View key={index} style={styles.transactionView}>
+                <View key={index} style={[styles.transactionView, {backgroundColor: cardBackgroundColor, borderColor: '#161622'}]}>
                     
                     <View style={styles.transactionSection}>
 
                         <View style={styles.transactionImageAndTitle}>
                             
-                            <View style={styles.transactionImageBackground}>
+                            <View style={[styles.transactionImageBackground, {backgroundColor: imageBackgroundColor}]}>
 
                                 <Image
                                style={styles.transactionImage}
@@ -33,12 +39,12 @@ export const Transactions = () => {
                                 />
                             </View>
                             <View style={styles.transactionTitleSection}>
-                                <Text style={styles.transactionTitle}>{transactions.title}</Text>
+                                <Text style={[styles.transactionTitle, {color: textColor}]}>{transactions.title}</Text>
                                 <Text style={styles.category}>{transactions.category}</Text>
                             </View>
                         </View>
                         <View style={styles.transactionsAmount}>
-                            <Text style={styles.transactionTitle}>{transactions.amount}</Text>
+                            <Text style={[styles.transactionTitle, {color: textColor}]}>{transactions.amount}</Text>
                         </View>
                     </View>
                 </View>

@@ -4,9 +4,15 @@ import { Card } from './Card';
 import { Transactions } from './Transactions';
 
 
-export const Homeheader = () => {
+export const Homeheader = ({isDarkTheme}) => {
+
+const headerBackground = isDarkTheme ? '#161622' : '#fff';
+  const titleColor = isDarkTheme ? '#ccc' : 'grey';
+  const subtitleColor = isDarkTheme ? '#fff' : '#000';
+  const iconBackgroundColor = isDarkTheme ? '#1e1e2d' : '#ecedea';
+
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: headerBackground}]}>
         <View style={styles.header}>
             <View style={styles.box}>
             <Image
@@ -14,12 +20,12 @@ export const Homeheader = () => {
                 style= {styles.profilePicture}
             /> 
             <View style={styles.userInfo}>
-                <Text style={styles.title}>Welcome back,</Text>
-                <Text style={styles.subtitle}>Eric Atsu</Text>
+                <Text style={[styles.title, {color: titleColor}]}>Welcome back,</Text>
+                <Text style={[styles.subtitle, {color:subtitleColor}]}>Eric Atsu</Text>
             </View>
-            <View style={styles.searchIcons}>
+            <View style={[styles.searchIcons, {backgroundColor: iconBackgroundColor}]}>
                 <Image
-                    source={require('../../assets/search.png')}
+                    source={isDarkTheme? require('../../assets/w-search.png'): require('../../assets/search.png')}
                 />
             </View>
             
@@ -27,11 +33,11 @@ export const Homeheader = () => {
         </View>
 
         <View style={styles.card}>
-            <Card/>
+            <Card isDarkTheme={isDarkTheme}/>
         </View>
 
         <View>
-            <Transactions />
+            <Transactions isDarkTheme={isDarkTheme}/>
         </View> 
 
     </View>
