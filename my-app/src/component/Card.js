@@ -64,11 +64,8 @@ export const Card = () => {
 
 const styles = StyleSheet.create({
 container: {
-    flex: 1,
+    // flex: 1,
     paddingHorizontal: 35,
-},
-card: {
-    marginTop:40
 },
 buttons: {
     backgroundColor: "#e4ebea",
@@ -81,7 +78,7 @@ buttons: {
   },
   buttonText: {
     marginLeft:20,
-    marginTop:5
+    marginTop:5,
   },
   buttonsContainer: {
     flexDirection: "row",

@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Text, Image} from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons';
 import { Card } from './Card';
+import { Transactions } from './Transactions';
 
 
 export const Homeheader = () => {
@@ -26,7 +26,14 @@ export const Homeheader = () => {
             </View>
         </View>
 
-        <Card style={styles.card}/>
+        <View style={styles.card}>
+            <Card/>
+        </View>
+
+        <View>
+            <Transactions />
+        </View> 
+
     </View>
   )
 }
@@ -71,10 +78,7 @@ const styles= StyleSheet.create({
         padding: 35,
         marginLeft: 100
       },
-
-
-    
-    
-
-
+      card: {
+        marginTop: 40
+      },
 })
